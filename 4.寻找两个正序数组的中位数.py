@@ -14,4 +14,5 @@ class Solution:
         else:
             return (temp[len(temp)//2-1]+temp[len(temp)//2])/2
 
+
 # @lc code=end

@@ -1,30 +1,31 @@
 #
 # @lc app=leetcode.cn id=8 lang=python3
 #
-# [8] 字符串转换整�? (atoi)
+# [8] 字符串转换整数 (atoi)
 #
 
 # @lc code=start
-
 class Solution:
     def myAtoi(self, s: str) -> int:
         INT_MAX = 2147483647
         INT_MIN = -2147483648
 
-        str = s.lstrip()  # �����߶���Ŀո�
-        num_re = re.compile(r'^[\+\-]?\d+')  # �����������
-        #  ^��ʾ���еĿ�ͷƥ�䣬��֤��+-0-9��ͷ������ֻ�����������֡�
-        num = num_re.findall(str)  # ����ƥ�������
+        str = s.lstrip()  # 清除左边多余的空格
+        num_re = re.compile(r'^[\+\-]?\d+')  # 设置正则规则
+        #  ^表示在行的开头匹配，保证以+-0-9开头；后续只能是连续数字。
+        num = num_re.findall(str)  # 查找匹配的内容
 
         # ^[\+\-]?\d+
-        # ^ ��ʾƥ���ַ�����ͷ������ƥ��ľ��� '+'  '-'  ��
-        # [] ��ʾƥ���������һ�ַ�������[0-9]����ƥ�������ַ� 0 - 9 �е�һ��
-        # ? ��ʾǰ��һ���ַ�������λ���һ�Σ������� ? ����Ϊ '+' �ſ���ʡ��
-        # \d ��ʾһ������ 0 - 9 ��Χ
-        # + ��ʾǰ��һ���ַ�����һ�λ��߶�Σ�\d+ ��һ�����ƥ��һ����������
+        # ^ 表示匹配字符串开头，我们匹配的就是 '+'  '-'  号
+        # [] 表示匹配包含的任一字符，比如[0-9]就是匹配数字字符 0 - 9 中的一个
+        # ? 表示前面一个字符出现零次或者一次，这里用 ? 是因为 '+' 号可以省略
+        # \d 表示一个数字 0 - 9 范围
+        # + 表示前面一个字符出现一次或者多次，\d+ 合一起就能匹配一连串数字了
 
-        # �޷���list��Ԫ��ֱ��ת��Ϊint��������Ҫ�Ƚ��
-        num = int(*num)  # ���ڷ��ص��Ǹ��б����������ת��������
+        # 无法将list中元素直接转换为int，所以需要先解包
+        num = int(*num)  # 由于返回的是个列表，解包并且转换成整数
 
-        return max(min(num, INT_MAX), INT_MIN)  # ����ֵ
+        return max(min(num, INT_MAX), INT_MIN)  # 返回值
+
+
 # @lc code=end

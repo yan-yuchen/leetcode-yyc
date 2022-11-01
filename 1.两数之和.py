@@ -7,13 +7,14 @@
 # @lc code=start
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
-        # Á½²ãÑ­»·Ğ§ÂÊ½ÏµÍ£¬²ÉÓÃ¹şÏ£±íÓÅ»¯
-        # Ã¿´ÎÑ­»·½«Êı¾İ·ÅÈë¹şÏ£±íÖĞ£¬ÅĞ¶Ïtarget-numÊÇ·ñÔÚ¹şÏ£±íÖĞ¼´¿É
-        hashmap = {}  # ×Öµä
-        for index, item in enumerate(nums):     # enumerateÄÜÍ¬Ê±ÁĞ¾ÙË÷ÒıºÍÊıÖµ
-            if (target-item in hashmap):        # Èç¹ûtarget-itemÔÚhashmapÖĞ£¬
-                return hashmap[target-item], index    # Ôò·µ»Øtarget-itemÓëitemµÄË÷Òı
-            # ½«ÊıÖµ´æ´¢µ½hashmapÖĞ£¨×ÖµäĞÎÊ½{item1:index1 ,item2:index2, ...}£©
+        # ä¸¤å±‚å¾ªç¯æ•ˆç‡è¾ƒä½ï¼Œé‡‡ç”¨å“ˆå¸Œè¡¨ä¼˜åŒ–
+        # æ¯æ¬¡å¾ªç¯å°†æ•°æ®æ”¾å…¥å“ˆå¸Œè¡¨ä¸­ï¼Œåˆ¤æ–­target-numæ˜¯å¦åœ¨å“ˆå¸Œè¡¨ä¸­å³å¯
+        hashmap = {}  # å­—å…¸
+        for index, item in enumerate(nums):     # enumerateèƒ½åŒæ—¶åˆ—ä¸¾ç´¢å¼•å’Œæ•°å€¼
+            if (target-item in hashmap):        # å¦‚æœtarget-itemåœ¨hashmapä¸­ï¼Œ
+                return hashmap[target-item], index    # åˆ™è¿”å›target-itemä¸itemçš„ç´¢å¼•
+            # å°†æ•°å€¼å­˜å‚¨åˆ°hashmapä¸­ï¼ˆå­—å…¸å½¢å¼{item1:index1 ,item2:index2, ...}ï¼‰
             hashmap[item] = index
+
 
 # @lc code=end

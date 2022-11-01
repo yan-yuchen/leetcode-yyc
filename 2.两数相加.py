@@ -10,17 +10,27 @@
 #     def __init__(self, val=0, next=None):
 #         self.val = val
 #         self.next = next
+# @lc app=leetcode.cn id=2 lang=python3
+#
+# [2] æ¶“ã‚†æšŸé©ç¨¿å§
+#
+
+# @lc code=start
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
 class Solution:
-    # Ä£ÄâÊúÊ½¼Ó·¨£¬È¡³öÁ´±íÖĞÃ¿Ò»Î»µÄÊıÖµ£¬Ïà¼Óºó·ÅÈëĞÂµÄÁ´±íÖĞ¼´¿É£¬ĞèÒª×¢Òâ½øÎ»
     def addTwoNumbers(self, l1: Optional[ListNode], l2: Optional[ListNode]) -> Optional[ListNode]:
-        # ³õÊ¼»¯µÚÈı¸öÊä³öÁ´±í
-        # ÕâÀïListNodeÊÇclassĞèÒª³õÊ¼»¯£¬Ö®ºó¸³ÖµµÄÊ±ºòÍ¬Àí
+        # åˆå§‹åŒ–ç¬¬ä¸‰ä¸ªè¾“å‡ºé“¾è¡¨
+        # è¿™é‡ŒListNodeæ˜¯classéœ€è¦åˆå§‹åŒ–ï¼Œä¹‹åèµ‹å€¼çš„æ—¶å€™åŒç†
         dummy = ListNode(0)
         node = dummy
 
         node_1 = l1
         node_2 = l2
-        carry = 0  # ½øÎ»
+        carry = 0  # è¿›ä½
 
         while (node_1 or node_2 or carry):
 
@@ -28,22 +38,23 @@ class Solution:
             num_2 = 0
 
             if node_1:
-                num_1 = node_1.val  # ÌáÈ¡µ±Ç°½ÚµãµÄÖµ
-                node_1 = node_1.next  # Ç°½øµ½ÏÂÒ»¸ö½Úµã
+                num_1 = node_1.val  # æå–å½“å‰èŠ‚ç‚¹çš„å€¼
+                node_1 = node_1.next  # å‰è¿›åˆ°ä¸‹ä¸€ä¸ªèŠ‚ç‚¹
             if node_2:
                 num_2 = node_2.val
                 node_2 = node_2.next
 
-            if (num_1+num_2+carry > 9):  # ĞèÒª½øÎ»µÄÊ±ºò
+            if (num_1+num_2+carry > 9):  # éœ€è¦è¿›ä½çš„æ—¶å€™
                 res = num_1+num_2+carry-10
-                node.next = ListNode(res)  # ĞÂ³õÊ¼»¯Ò»¸ö½Úµã£¬È»ºóÁ¬½Óµ½nodeÉÏ
+                node.next = ListNode(res)  # æ–°åˆå§‹åŒ–ä¸€ä¸ªèŠ‚ç‚¹ï¼Œç„¶åè¿æ¥åˆ°nodeä¸Š
                 carry = 1
             else:
                 res = num_1+num_2+carry
                 node.next = ListNode(res)
                 carry = 0
 
-            node = node.next  # Ç°½øµ½ÏÂÒ»¸ö½Úµã
+            node = node.next  # å‰è¿›åˆ°ä¸‹ä¸€ä¸ªèŠ‚ç‚¹
 
-        return dummy.next  # Ò»¶¨Òª·µ»Ø³õÊ¼Á´±íÍ·
+        return dummy.next  # ä¸€å®šè¦è¿”å›åˆå§‹é“¾è¡¨å¤´
+
 # @lc code=end

@@ -1,20 +1,20 @@
 #
 # @lc app=leetcode.cn id=9 lang=python3
 #
-# [9] å›æ–‡æ•?
+# [9] å›æ–‡æ•°
 #
 
 # @lc code=start
 class Solution:
     def isPalindrome(self, x: int) -> bool:
-        # ·½·¨Ò»£ºÖ±½Ó·­×ªÅĞ¶ÏÊÇ·ñÏàµÈ
+        # æ–¹æ³•ä¸€ï¼šç›´æ¥ç¿»è½¬åˆ¤æ–­æ˜¯å¦ç›¸ç­‰
         # s = str(x)
         # if (s == s[::-1]):
         #     return True
         # else:
         #     return False
 
-        # ÊÖ¶¯·­×ªÊı×Ö
+        # æ‰‹åŠ¨ç¿»è½¬æ•°å­—
         num = x
         res = 0
 

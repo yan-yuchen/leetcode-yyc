@@ -18,10 +18,11 @@ class Solution:
         while (x > 0):
             res = res*10+x % 10
             x = x//10
-            # Õû³ý
+            # æ•´é™¤
 
         if res >= 0x7fffffff:
             return 0
 
         return res*flag
+
 # @lc code=end

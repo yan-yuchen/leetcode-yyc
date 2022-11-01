@@ -1,7 +1,7 @@
 #
 # @lc app=leetcode.cn id=5 lang=python3
 #
-# [5] æœ€é•¿å›æ–‡å­ä¸?
+# [5] æœ€é•¿å›æ–‡å­ï¿½?
 #
 
 # @lc code=start
@@ -10,20 +10,20 @@ class Solution:
 
         res = ""
 
-        # i±íÊ¾ÖĞĞÄ£¬ Ã¶¾ÙÃ¿¸ö»ØÎÄ×Ö·ûÖĞĞÄ
-        # ÓÉ×óÓÒÁ½¸öÖ¸Õël£¬r·Ö±ğ×óÓÒÒÆ¶¯
+        # iè¡¨ç¤ºä¸­å¿ƒï¼Œ æšä¸¾æ¯ä¸ªå›æ–‡å­—ç¬¦ä¸­å¿ƒ
+        # ç”±å·¦å³ä¸¤ä¸ªæŒ‡é’ˆlï¼Œråˆ†åˆ«å·¦å³ç§»åŠ¨
         for i in range(len(s)):
 
-            # »ØÎÄ×Ö·ûÎªÆæÊı
+            # å›æ–‡å­—ç¬¦ä¸ºå¥‡æ•°
             l, r = i-1, i+1
             while (l >= 0 and r < len(s) and s[l] == s[r]):
                 l = l-1
                 r = r+1
-            # ¸üĞÂres
+            # æ›´æ–°res
             if (r-l-1 > len(res)):
                 res = s[l+1:r]
 
-            # »ØÎÄ×Ö·ûÎªÅ¼Êı
+            # å›æ–‡å­—ç¬¦ä¸ºå¶æ•°
             l, r = i, i+1
             while (l >= 0 and r < len(s) and s[l] == s[r]):
                 l = l-1
@@ -32,5 +32,6 @@ class Solution:
                 res = s[l+1:r]
 
         return res
+
 
 # @lc code=end

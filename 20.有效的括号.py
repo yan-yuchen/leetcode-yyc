@@ -6,6 +6,8 @@
 
 # @lc code=start
 class Solution:
+    # 使用栈来维护
+    # 左括号，直接入栈，如果右括号，看和栈顶的左括号是否匹配，不匹配直接返回false，否则弹出；最后返回栈 == 空
     def isValid(self, string: str) -> bool:
         dic = {']': '[',
                ')': '(',
